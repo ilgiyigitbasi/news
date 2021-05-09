@@ -7,9 +7,10 @@ export default {
       path: '/',
       component: '../layouts/index',
       routes: [
-        { path: '/', component: '../pages/index' }
+        { path: '/', component: '../pages/index' },
+        { path: '/newsDetails', component: '../pages/newsDetails' }
       ]
-    }
+    },
   ],
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html
@@ -19,7 +20,7 @@ export default {
       dynamicImport: false,
       title: 'news',
       dll: true,
-      
+
       routes: {
         exclude: [
           /models\//,

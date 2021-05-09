@@ -1,0 +1,32 @@
+.mainBoxContainer {
+  height: 450px;
+  width: 25vw;
+  overflow: auto;
+  border: 1px solid #e1e3e5;
+  border-radius: 20px;
+  font-family: PoppinsMedium;
+  color: #013567;
+  -webkit-box-shadow: 10px 10px 24px -9px rgba(217,208,217,0.5);
+  -moz-box-shadow: 10px 10px 24px -9px rgba(217,208,217,0.5);
+  box-shadow: 10px 10px 24px -9px rgba(217,208,217,0.5);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+.newsDetail {
+  font-family: Poppins;
+  color: lightslategray;
+  font-size: 12px;
+  padding: 10px;
+  text-align: left;
+}
+.newsHeader {
+  padding: 10px;
+  text-align: left;
+}
+.newsLink {
+  font-family: PoppinsSemiBold;
+  color: #013567;
+  font-size: 12px;
+  justify-self: flex-end;
+}

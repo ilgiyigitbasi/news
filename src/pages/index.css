@@ -1,23 +1,32 @@
-@font-face {
+
+
+.topHeadLinesContainer {
+  display: grid;
+  grid-template-columns: repeat(3 , 34%);
+  grid-column-gap: 3%;
+  grid-row-gap: 2%;
+  align-items: center;
+  justify-content: center;
+}
+.detailMainContainer {
+
+}
+.title {
+  font-family: PoppinsSemiBold;
+  color: #013567;
+  font-size: 15px;
+  text-align: left;
+  margin: 20px 0;
+}
+.infoAuthor {
   font-family: PoppinsMedium;
-  src: local(PoppinsMedium),
-  url('/src/assets/Poppins-Medium.ttf') format('ttf');
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-}
+  color: lightslategray;
+  text-align: left;
+  font-size: 11px;
 
-@font-face {
+}
+.content {
+  font-size: 12px;
   font-family: Poppins;
-  src: local(MarkProMedium),
-  url('/src/assets/Poppins-Regular.ttf') format('ttf');
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-}
-
-.mainContainer {
-  padding: 0 10vw;
-  width: 100%;
-  text-align: center;
+  text-align: left;
 }
