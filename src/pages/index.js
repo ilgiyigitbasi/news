@@ -33,7 +33,10 @@ class Index extends Component {
     let topHeadlines = this.props?.newsAPIModel?.topHeadlines
     return (
 
-        <div className={styles.topHeadLinesContainer}>
+        <div className={styles.topHeadLinesContainer} style={topHeadlines.totalResults === 0 ? {display:'flex', color:'lightgray'}: undefined}>
+          {topHeadlines.totalResults === 0 && <div>
+            Herhangi bir sonuç bulunamadı lütfen tekrar deneyin!
+          </div>}
           {topHeadlines && topHeadlines?.articles?.map((item,i)=> <NewsBox index={i} details={item}/>)}
         </div>
 

@@ -8,6 +8,9 @@
   align-items: center;
   justify-content: center;
   overflow-y: auto;
+  height: 80vh;
+  text-align: center;
+  font-family: PoppinsSemiBold;
 }
 @media screen and (max-width: 480px) {
   .topHeadLinesContainer {
