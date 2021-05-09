@@ -34,3 +34,17 @@
   display: flex;
   flex-direction: row;
 }
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 2vw;
+  width: 90%;
+}
+.menuItems {
+  padding: 15px 15px 35px 15px;
+  font-family: PoppinsMedium;
+  font-size: 14px;
+  color: #013567;
+
+}

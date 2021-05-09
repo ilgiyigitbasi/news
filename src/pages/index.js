@@ -14,9 +14,17 @@ class Index extends Component {
   componentDidMount() {
     this.getTopHeadlines()
   }
-  getTopHeadlines = ()=> {
+  getTopHeadlines = async ()=> {
     this.props.dispatch({
+      type:'newsAPIModel/updateState',
+      payload:{loading:true}
+    })
+    await this.props.dispatch({
       type: GET_TOPHEADLINES
+    })
+    this.props.dispatch({
+      type:'newsAPIModel/updateState',
+      payload:{loading:false}
     })
   }
 

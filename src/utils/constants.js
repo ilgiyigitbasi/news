@@ -5,3 +5,4 @@ export const searchArticlesURL = '/everything'
 
 export const GET_TOPHEADLINES = 'newsAPIModel/getHeadlines'
 export const SEARCH_ARTICLES = 'newsAPIModel/searchArticles'
+export const SEARCH_NEWSPAPERS = 'newsAPIModel/newsPapers'

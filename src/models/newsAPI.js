@@ -44,6 +44,20 @@ export default {
         console.log(e);
       }
     },
+    * newsPapers({ articles }, { call, put, select }) {
+      try {
+        const headlinesParams = {
+          domain:articles.domain
+        };
+        const result = yield call(api.get, searchArticlesURL+'?domains='+headlinesParams.domain);
+        if (result.status === 200) {
+
+          yield put({ type: 'updateState', payload: { topHeadlines: result.data } });
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    },
 
   },
 

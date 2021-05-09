@@ -3,6 +3,8 @@ import Header from "@/components/header";
 import React from "react";
 import 'moment/locale/tr'
 import Footer from "@/components/footer";
+import Loading from "@/components/loading";
+import {connect} from 'dva'
 
 function BasicLayout(props) {
   if (props.location.pathname === '/NewsDetails') {
@@ -12,13 +14,21 @@ function BasicLayout(props) {
       <Footer/>
     </div>
   }
+  console.log(props)
   return (
+    <>
+      <Loading show={props.loading}/>
     <div className={styles.mainContainer}>
       <Header/>
       {props.children}
       <Footer/>
     </div>
+    </>
   );
 }
-
-export default BasicLayout;
+const mapStateToProps = models => {
+  return {
+    loading: models.newsAPIModel.loading ,
+  };
+};
+export default connect(mapStateToProps) (BasicLayout);
