@@ -9,8 +9,17 @@
   justify-content: center;
   overflow-y: auto;
 }
-.detailMainContainer {
-
+@media screen and (max-width: 480px) {
+  .topHeadLinesContainer {
+    display: grid;
+    grid-template-columns: repeat(1 , 90%);
+    grid-column-gap: 3%;
+    grid-row-gap: 25px;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    height: 100vh;
+  }
 }
 .title {
   font-family: PoppinsSemiBold;

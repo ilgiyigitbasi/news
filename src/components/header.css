@@ -7,6 +7,7 @@
   height: 100px;
   width: 150px;
 }
+
 .searchInput {
   border: 1px solid #e1e3e5;
   height: 30px;
@@ -41,10 +42,15 @@
   padding: 0 2vw;
   width: 90%;
 }
+@media screen and (max-width: 480px) {
+  .menu {
+    width: 320px;
+    overflow-x: auto;
+  }
+}
 .menuItems {
   padding: 15px 15px 35px 15px;
   font-family: PoppinsMedium;
   font-size: 14px;
   color: #013567;
-
 }

@@ -21,7 +21,7 @@ class NewsBox extends Component {
     let newsDetail = this.props.details
     return (
       <div className={styles.mainBoxContainer}>
-        <img src={newsDetail.urlToImage} style={{height:'200px', width:'25vw', borderRadius:'20px'}} alt=""/>
+        <img src={newsDetail.urlToImage} className={styles.image} alt=""/>
         <div className={styles.newsHeader}>{newsDetail.title}</div>
         <div className={styles.newsDetail}>{newsDetail.description} </div>
         <div className={styles.newsLink} onClick={()=> this.showDetails(this.props.index)}>devamı için tıklayınız...</div>
