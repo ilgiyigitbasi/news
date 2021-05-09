@@ -1,17 +1,37 @@
-import styles from './index.css';
+import React, {Component} from 'react';
+import styles from './index.css'
+import Header from "@/components/header";
+import {connect} from 'dva'
+import {GET_TOPHEADLINES} from "@/utils/constants";
 
-export default function() {
-  return (
-    <div className={styles.normal}>
-      <div className={styles.welcome} />
-      <ul className={styles.list}>
-        <li>To get started, edit <code>src/pages/index.js</code> and save to reload.</li>
-        <li>
-          <a href="https://umijs.org/guide/getting-started.html">
-            Getting Started
-          </a>
-        </li>
-      </ul>
-    </div>
-  );
+class Index extends Component {
+  constructor(props) {
+    super(props);
+
+  }
+
+  componentDidMount() {
+    this.getTopHeadlines()
+  }
+  getTopHeadlines = ()=> {
+    this.props.dispatch({
+      type: GET_TOPHEADLINES
+    })
+  }
+
+  render() {
+    return (
+      <div className={styles.mainContainer}>
+        <Header/>
+      </div>
+    );
+  }
 }
+
+const mapStateToProps = models => {
+  return {
+    newsAPIModel: models.newsAPIModel,
+  };
+};
+
+export default connect(mapStateToProps) (Index);
