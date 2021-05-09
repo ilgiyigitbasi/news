@@ -2,11 +2,12 @@
 
 .topHeadLinesContainer {
   display: grid;
-  grid-template-columns: repeat(3 , 34%);
+  grid-template-columns: repeat(3 , 30%);
   grid-column-gap: 3%;
   grid-row-gap: 2%;
   align-items: center;
   justify-content: center;
+  overflow-y: auto;
 }
 .detailMainContainer {
 

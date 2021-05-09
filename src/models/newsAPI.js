@@ -1,5 +1,6 @@
 import api from '../utils/api';
 import {
+  searchArticlesURL,
   topHeadlinesURL
 } from '@/utils/constants';
 
@@ -15,12 +16,26 @@ export default {
   subscriptions: {},
 
   effects: {
-    * getHeadlines({ uuid }, { call, put, select }) {
+    * getHeadlines({ articles }, { call, put, select }) {
       try {
         const headlinesParams = {
           country: 'TR',
         };
         const result = yield call(api.get, topHeadlinesURL+'?country='+headlinesParams.country);
+        if (result.status === 200) {
+
+          yield put({ type: 'updateState', payload: { topHeadlines: result.data } });
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    },
+    * searchArticles({ articles }, { call, put, select }) {
+      try {
+        const headlinesParams = {
+          text: articles.text,
+        };
+        const result = yield call(api.get, searchArticlesURL+'?qInTitle='+headlinesParams.text);
         if (result.status === 200) {
 
           yield put({ type: 'updateState', payload: { topHeadlines: result.data } });

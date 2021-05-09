@@ -13,9 +13,9 @@
   width: 40vw ;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px ;
-  -webkit-box-shadow: 10px 10px 34px -150px rgba(225,227,229,1);
-  -moz-box-shadow: 10px 10px 34px -150px rgba(225,227,229,1);
-  box-shadow: 10px 10px 34px -150px rgba(225,227,229,1);
+  -webkit-box-shadow: 10px 10px 24px -9px rgba(217,208,217,0.5);
+  -moz-box-shadow: 10px 10px 24px -9px rgba(217,208,217,0.5);
+  box-shadow: 10px 10px 24px -9px rgba(217,208,217,0.5);
 }
 .searchInput:focus {
   outline: none;
