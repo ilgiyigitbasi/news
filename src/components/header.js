@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import styles from './header.css';
 import {connect} from 'dva'
 import {SEARCH_ARTICLES, SEARCH_NEWSPAPERS} from "@/utils/constants";
+import {router} from "umi";
 
 class Header extends Component {
   constructor(props) {
@@ -9,7 +10,6 @@ class Header extends Component {
     this.state = {}
     this.newsPapers = [
       {name: 'Sabah', domain: 'sabah.com.tr'},
-      {name: 'Haber Türk', domain: 'haberturk.com.tr'},
       {name: 'Sözcü', domain: 'sozcu.com.tr'},
       {name: 'Hürriyet', domain: 'hurriyet.com.tr'},
       {name: 'Milliyet', domain: 'milliyet.com.tr'},
@@ -21,6 +21,7 @@ class Header extends Component {
       type: 'newsAPIModel/updateState',
       payload: {loading: true}
     })
+    router.push('/')
     let articles = {
       text: this.state.searchText,
     }
@@ -32,6 +33,7 @@ class Header extends Component {
       type: 'newsAPIModel/updateState',
       payload: {loading: false}
     })
+
   }
 
   searchNewsPapers = async (domain) => {
@@ -39,6 +41,7 @@ class Header extends Component {
       type: 'newsAPIModel/updateState',
       payload: {loading: true}
     })
+    router.push('/')
     let articles = {
       domain: domain,
     }
@@ -50,6 +53,7 @@ class Header extends Component {
       type: 'newsAPIModel/updateState',
       payload: {loading: false}
     })
+
   }
 
   render() {
