@@ -5,8 +5,10 @@ import { host } from '@/utils/constants';
 
 const axiosClient = axios.create({
   baseURL: host,
+  mode: 'no-cors',
   headers: {
-    'X-Api-Key':'c74c90228fec490d8b35c3e532e0649a'
+    'X-Api-Key':'c74c90228fec490d8b35c3e532e0649a',
+
   },
 });
 

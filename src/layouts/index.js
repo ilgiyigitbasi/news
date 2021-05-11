@@ -18,6 +18,10 @@ function BasicLayout(props) {
   return (
     <>
       <Loading show={props.loading}/>
+      <div className={props?.newsApiModel?.showModal  ? "background-Modal" : "none"} onClick={()=>props.dispatch({
+        type: 'newsAPIModel/updateState',
+        payload: {showModal: false}
+      })}/>
     <div className={styles.mainContainer}>
       <Header/>
       {props.children}
@@ -28,7 +32,8 @@ function BasicLayout(props) {
 }
 const mapStateToProps = models => {
   return {
-    loading: models.newsAPIModel.loading ,
+    loading: models.newsAPIModel.loading,
+    newsApiModel: models.newsAPIModel
   };
 };
 export default connect(mapStateToProps) (BasicLayout);

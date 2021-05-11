@@ -36,3 +36,11 @@ body::-webkit-scrollbar {
   display: none !important;
 }
 
+.background-Modal {
+  position: absolute;
+  width: 100%;
+  height: 120%;
+  opacity: 0.2 !important;
+  background-color: #013567 !important;
+  z-index: 2;
+}

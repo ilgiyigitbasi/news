@@ -41,6 +41,9 @@
   justify-content: space-between;
   padding: 0 2vw;
   width: 90%;
+  align-items: center;
+  font-family: PoppinsSemiBold;
+  color: #013567;
 }
 @media screen and (max-width: 480px) {
   .menu {
@@ -53,4 +56,39 @@
   font-family: PoppinsMedium;
   font-size: 14px;
   color: #013567;
+  cursor: pointer;
+}
+.list {
+  font-family: PoppinsMedium;
+  color: #013567;
+  text-decoration: underline;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 25px;
+}
+.listModal {
+  position: absolute;
+  z-index: 1000;
+  height: 375px;
+  width: 300px;
+  overflow: auto;
+  background-color: white;
+  border-radius: 15px;
+  -webkit-box-shadow: 10px 10px 24px -9px rgba(217,208,217,0.5);
+  -moz-box-shadow: 10px 10px 24px -9px rgba(217,208,217,0.5);
+  box-shadow: 10px 10px 24px -9px rgba(217,208,217,0.5);
+}
+.hidden {
+  display: none;
+}
+.itemContainer {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  padding: 15px;
+  font-family: Poppins;
+  color: #013567;
+  text-align: left;
+  font-size: 12px;
+  border-bottom: 1px solid rgba(217,208,217,0.2) ;
+  cursor: pointer;
 }
