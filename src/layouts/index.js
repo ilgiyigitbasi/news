@@ -14,7 +14,6 @@ function BasicLayout(props) {
       <Footer/>
     </div>
   }
-  console.log(props)
   return (
     <>
       <Loading show={props.loading}/>

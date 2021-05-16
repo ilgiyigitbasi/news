@@ -11,6 +11,7 @@
   height: 80vh;
   text-align: center;
   font-family: PoppinsSemiBold;
+  margin-top: 25px;
 }
 @media screen and (max-width: 480px) {
   .topHeadLinesContainer {

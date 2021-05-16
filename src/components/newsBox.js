@@ -8,7 +8,6 @@ class NewsBox extends Component {
     super(props);
   }
   showDetails= (i)=> {
-      console.log(i)
       let topHeadlines = this.props?.newsAPIModel?.topHeadlines
       let selectedNews= topHeadlines.articles[i]
       this.props.dispatch({
