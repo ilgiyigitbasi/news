@@ -8,21 +8,20 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      newsPapersFav: []
+      newsPapersFav: [
+        {name: 'Sabah', domain: 'sabah.com.tr', isFav: false},
+        {name: 'Sözcü', domain: 'sozcu.com.tr', isFav: false},
+        {name: 'Hürriyet', domain: 'hurriyet.com.tr', isFav: false},
+        {name: 'Milliyet', domain: 'milliyet.com.tr', isFav: false},
+        {name: 'New York Times', domain: 'nytimes.com', isFav: false},
+        {name: 'USA Today', domain: 'wsj.com', isFav: false},
+        {name: 'The Wall Street Journal', domain: 'usatoday.com', isFav: false},
+        {name: 'Dainik Bhaskar', domain: 'bhaskar.com', isFav: false},
+        {name: 'The Asahi Shimbun', domain: 'ashai.com', isFav: false},
+        {name: 'The Washington Post', domain: 'washingtonPost.com', isFav: false},
+        {name: 'The Daily Telepgraph', domain: 'telegraph.co.uk', isFav: false},
+      ]
     }
-    this.newsPapers = [
-      {name: 'Sabah', domain: 'sabah.com.tr', isFav: false},
-      {name: 'Sözcü', domain: 'sozcu.com.tr', isFav: false},
-      {name: 'Hürriyet', domain: 'hurriyet.com.tr', isFav: false},
-      {name: 'Milliyet', domain: 'milliyet.com.tr', isFav: false},
-      {name: 'New York Times', domain: 'nytimes.com', isFav: false},
-      {name: 'USA Today', domain: 'wsj.com', isFav: false},
-      {name: 'The Wall Street Journal', domain: 'usatoday.com', isFav: false},
-      {name: 'Dainik Bhaskar', domain: 'bhaskar.com', isFav: false},
-      {name: 'The Asahi Shimbun', domain: 'ashai.com', isFav: false},
-      {name: 'The Washington Post', domain: 'washingtonPost.com', isFav: false},
-      {name: 'The Daily Telepgraph', domain: 'telegraph.co.uk', isFav: false},
-    ]
   }
 
   componentDidMount() {
@@ -113,7 +112,7 @@ class Header extends Component {
         })}> Tüm Gazate Listesi
         </div>
         <div className={this.props.newsAPIModel.showModal ? styles.listModal: styles.hidden}>
-          {this.state.newsPapersFav.map((item, i) => <div className={styles.itemContainer}><div onClick={() => this.searchNewsPapers(item.domain)}>{item.name}</div>
+          {this.state.newsPapersFav &&this.state.newsPapersFav.map((item, i) => <div className={styles.itemContainer}><div onClick={() => this.searchNewsPapers(item.domain)}>{item.name}</div>
             {item.isFav ? <div style={{justifySelf:'center'}} onClick={()=> this.selectFav(i, false)} ><img src={require('@/assets/star.png')} style={{height:'13px', justifySelf:'center'}} alt='' /></div> :<div className={styles.fav} style={{justifySelf:'center'}} onClick={()=> this.selectFav(i, true)}><img src={require('@/assets/star.svg')} style={{height:'13px'}} alt='' /></div>}
           </div>)}
         </div>
