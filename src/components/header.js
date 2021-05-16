@@ -29,13 +29,7 @@ class Header extends Component {
       this.setState({
         newsPapersFav:  JSON.parse(localStorage.getItem('favs-news')).newsPapersFav
       }, ()=> this.state.newsPapersFav.sort(function(a,b){return a.isFav-b.isFav}).reverse())
-
-    } else {
-      this.setState({
-        newsPapersFav: this.newsPapers
-      })
     }
-
   }
 
   search = async () => {
