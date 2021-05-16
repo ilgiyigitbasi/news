@@ -61,6 +61,10 @@ class Header extends Component {
     let articles = {
       domain: domain,
     }
+   let header1 = this.state.newsPapersFav.filter(item=> item.domain === domain)
+    this.setState({
+      header: header1[0].name
+    })
     this.props.dispatch({
       type: 'newsAPIModel/updateState',
       payload: {showModal: false}
@@ -93,7 +97,7 @@ class Header extends Component {
       <>
         <div className={styles.mainContainer}>
 
-          <img className={styles.logo} src={require('@/assets/logo.png')} alt=""/>
+          <img className={styles.logo} onClick={()=> router.push('/')} src={require('@/assets/logo.png')} alt=""/>
           <div className={styles.searchContainer}>
             <input className={styles.searchInput} onChange={(e) => this.setState({searchText: e.target.value})}
                    type="text"/>
@@ -103,8 +107,11 @@ class Header extends Component {
         <div className={styles.list} onClick={()=> this.props.dispatch({
           type:'newsAPIModel/updateState',
           payload: {showModal: true}
-        })}> Tüm Gazate Listesi
+        })}> Tüm Gazete Listesi
         </div>
+        {this.state.header &&<div className={styles.header1}>
+          {this.state.header}
+        </div>}
         <div className={this.props.newsAPIModel.showModal ? styles.listModal: styles.hidden}>
           {this.state.newsPapersFav &&this.state.newsPapersFav.map((item, i) => <div className={styles.itemContainer}><div onClick={() => this.searchNewsPapers(item.domain)}>{item.name}</div>
             {item.isFav ? <div style={{justifySelf:'center'}} onClick={()=> this.selectFav(i, false)} ><img src={require('@/assets/star.png')} style={{height:'13px', justifySelf:'center'}} alt='' /></div> :<div className={styles.fav} style={{justifySelf:'center'}} onClick={()=> this.selectFav(i, true)}><img src={require('@/assets/star.svg')} style={{height:'13px'}} alt='' /></div>}
